@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Antre</string>
+    <string name="data_pemohon">Data pemohon</string>
+    <string name="nama_lengkap">Nama lengkap</string>
+    <string name="nama_dalam_ktp">Dalam KTP tertulis</string>
+    <string name="umur_tanggal">Umur/tanggal lahir</string>
+    <string name="perkerjaan">Perkerjaan</string>
+    <string name="nomor_ktp">Nomor KTP</string>
+    <string name="alamat">Alamat</string>
+    <string name="berdasarkan_surat_kuasa_nomor">Berdasarkan surat kuasa nomor</string>
+    <string name="tanggal">tanggal</string>
+    <string name="dengan_ini_mengajukan_permohonan">dengan ini mengajukan permohonan</string>
+    <string name="submit">submit</string>
+    <string-array name="list">
+        <item>Konversi / Pendaftaran Hak</item>
+        <item>Pendaftaran Hak Milik Sarusun</item>
+        <item>Pendaftaran Tanah Wakaf</item>
+        <item>Pendaftaran Peralihan Hak</item>
+        <item>Pendaftaran Perubahan Hak</item>
+        <item>Pendaftaran Hak Tanggungan</item>
+        <item>Penghapusan Hak Tanggungan / Roya</item>
+        <item>Penerbitan Sertifikat Pengganti</item>
+        <item>Ganti Nama Sertifikat</item>
+        <item>Lainnya</item>
+    </string-array>
+</resources>

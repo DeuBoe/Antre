@@ -1,0 +1,99 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="id.deuboe.antre"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:5:5-66
+11-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+14    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:13:5-79
+15-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:13:22-76
+16
+17    <application
+17-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:7:5-21:19
+18        android:allowBackup="true"
+18-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:8:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] /home/elly/.gradle/caches/transforms-2/files-2.1/9b282167d5edf2ce15b1570bf9b055c0/core-1.1.0/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:9:9-43
+22        android:label="@string/app_name"
+22-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:10:9-41
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:11:9-54
+24        android:supportsRtl="true"
+24-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:12:9-35
+25        android:theme="@style/AppTheme" >
+25-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:13:9-40
+26        <activity android:name="id.deuboe.antre.MainActivity" >
+26-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:14:9-20:20
+26-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:14:19-47
+27            <intent-filter>
+27-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:15:13-19:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:16:17-69
+28-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:16:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:18:17-77
+30-->/home/elly/AndroidStudioProjects/Antre/app/src/main/AndroidManifest.xml:18:27-74
+31            </intent-filter>
+32        </activity>
+33
+34        <service
+34-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:17:9-23:19
+35            android:name="com.google.firebase.components.ComponentDiscoveryService"
+35-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:18:13-84
+36            android:directBootAware="true"
+36-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:15:13-43
+37            android:exported="false" >
+37-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:19:13-37
+38            <meta-data
+38-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:20:13-22:85
+39                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+39-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:21:17-111
+40                android:value="com.google.firebase.components.ComponentRegistrar" />
+40-->[com.google.firebase:firebase-firestore:21.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/8630ad97a0e48e02e59ad0f30634f9f6/firebase-firestore-21.2.0/AndroidManifest.xml:22:17-82
+41        </service>
+42
+43        <activity
+43-->[com.google.android.gms:play-services-base:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+44            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+44-->[com.google.android.gms:play-services-base:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+45            android:exported="false"
+45-->[com.google.android.gms:play-services-base:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+46            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+46-->[com.google.android.gms:play-services-base:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+47
+48        <provider
+48-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:19:9-23:39
+49            android:name="com.google.firebase.provider.FirebaseInitProvider"
+49-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:20:13-77
+50            android:authorities="id.deuboe.antre.firebaseinitprovider"
+50-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:21:13-72
+51            android:exported="false"
+51-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:22:13-37
+52            android:initOrder="100" />
+52-->[com.google.firebase:firebase-common:19.2.0] /home/elly/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:23:13-36
+53
+54        <meta-data
+54-->[com.google.android.gms:play-services-basement:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/ff3dd19e1196ae1a87cf3d7e0466341a/play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+55            android:name="com.google.android.gms.version"
+55-->[com.google.android.gms:play-services-basement:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/ff3dd19e1196ae1a87cf3d7e0466341a/play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+56            android:value="@integer/google_play_services_version" />
+56-->[com.google.android.gms:play-services-basement:17.0.0] /home/elly/.gradle/caches/transforms-2/files-2.1/ff3dd19e1196ae1a87cf3d7e0466341a/play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+57    </application>
+58
+59</manifest>
