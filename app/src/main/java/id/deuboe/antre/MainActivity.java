@@ -11,43 +11,129 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
-  FirebaseFirestore db = FirebaseFirestore.getInstance();
-  private static final String TAG = "MyActivity";
-  EditText name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney, date;
-  Button button;
+    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private static final String TAG = "MyActivity";
+    EditText name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney, date;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    name = findViewById(R.id.textName);
-    ktp = findViewById(R.id.textKtp);
-    dateOfBirth = findViewById(R.id.textDateOfBirth);
-    profession = findViewById(R.id.textProfession);
-    idKtp = findViewById(R.id.textIdKtp);
-    address = findViewById(R.id.textAddress);
-    idPowerOfAttorney = findViewById(R.id.textIdPowerOfAttorney);
-    date = findViewById(R.id.textDate);
-    button = findViewById(R.id.button);
+        name = findViewById(R.id.textName);
+        ktp = findViewById(R.id.textKtp);
+        dateOfBirth = findViewById(R.id.textDateOfBirth);
+        profession = findViewById(R.id.textProfession);
+        idKtp = findViewById(R.id.textIdKtp);
+        address = findViewById(R.id.textAddress);
+        idPowerOfAttorney = findViewById(R.id.textIdPowerOfAttorney);
+        date = findViewById(R.id.textDate);
 
-    button.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
 
+//    button.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View view) {
+//
+//        String input0 = name.getText().toString();
+//        String input1 = ktp.getText().toString();
+//        String input2 = dateOfBirth.getText().toString();
+//        String input3 = profession.getText().toString();
+//        String input4 = idKtp.getText().toString();
+//        String input5 = address.getText().toString();
+//        String input6 = idPowerOfAttorney.getText().toString();
+//        String input7 = date.getText().toString();
+//
+//        if (!TextUtils.isEmpty(input0)
+//            && !TextUtils.isEmpty(input1)
+//            && !TextUtils.isEmpty(input2)
+//            && !TextUtils.isEmpty(input3)
+//            && !TextUtils.isEmpty(input4)
+//            && !TextUtils.isEmpty(input5)
+//            && !TextUtils.isEmpty(input6)
+//            && !TextUtils.isEmpty(input7)) {
+//          createUser();
+//        } else {
+//          Snackbar.make(view, "Tolong diisi yang masih kosong", Snackbar.LENGTH_SHORT).show();
+//        }
+//
+//      }
+//    });
+
+        findViewById(R.id.button).setOnClickListener(this);
+
+    }
+
+    public boolean validateInputs(String textName, String textKtp, String textDateOfBirth, String textProfession, String textIdKtp, String textAddress, String textIdPowerOfAttorney, String textDate) {
+        if (textName.isEmpty()) {
+            name.setError(getString(R.string.error_name));
+            name.requestFocus();
+            return true;
+        }
+
+        if (textKtp.isEmpty()) {
+            ktp.setError(getString(R.string.error_ktp));
+            ktp.requestFocus();
+            return true;
+        }
+
+        if (textDateOfBirth.isEmpty()) {
+            dateOfBirth.setError(getString(R.string.error_dateofbirth));
+            dateOfBirth.requestFocus();
+            return true;
+        }
+
+        if (textProfession.isEmpty()) {
+            profession.setError(getString(R.string.error_profession));
+            profession.requestFocus();
+            return true;
+        }
+
+        if (textIdKtp.isEmpty()) {
+            idKtp.setError(getString(R.string.error_idktp));
+            idKtp.requestFocus();
+            return true;
+        }
+
+        if (textAddress.isEmpty()) {
+            address.setError(getString(R.string.error_address));
+            address.requestFocus();
+            return true;
+        }
+
+        if (textIdPowerOfAttorney.isEmpty()) {
+            idPowerOfAttorney.setError(getString(R.string.error_idattorney));
+            idPowerOfAttorney.requestFocus();
+            return true;
+        }
+
+        if (textDate.isEmpty()) {
+            date.setError(getString(R.string.error_date));
+            date.requestFocus();
+            return true;
+        }
+        return false;
+    }
+
+    private void createUser() {
         String input0 = name.getText().toString();
         String input1 = ktp.getText().toString();
         String input2 = dateOfBirth.getText().toString();
@@ -57,94 +143,112 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String input6 = idPowerOfAttorney.getText().toString();
         String input7 = date.getText().toString();
 
-        if (!TextUtils.isEmpty(input0)
-            && !TextUtils.isEmpty(input1)
-            && !TextUtils.isEmpty(input2)
-            && !TextUtils.isEmpty(input3)
-            && !TextUtils.isEmpty(input4)
-            && !TextUtils.isEmpty(input5)
-            && !TextUtils.isEmpty(input6)
-            && !TextUtils.isEmpty(input7)) {
-          createUser();
-        } else {
-          Snackbar.make(view, "Tolong diisi yang masih kosong", Snackbar.LENGTH_SHORT).show();
-        }
+        final Spinner spinner = findViewById(R.id.spinner);
 
-      }
-    });
+        spinner.setOnItemSelectedListener(this);
 
-  }
+        String[] list = getResources().getStringArray(R.array.list);
 
-  private void createUser() {
-    String input0 = name.getText().toString();
-    String input1 = ktp.getText().toString();
-    String input2 = dateOfBirth.getText().toString();
-    String input3 = profession.getText().toString();
-    String input4 = idKtp.getText().toString();
-    String input5 = address.getText().toString();
-    String input6 = idPowerOfAttorney.getText().toString();
-    String input7 = date.getText().toString();
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        spinner.setAdapter(arrayAdapter);
 
-    final Spinner spinner = findViewById(R.id.spinner);
+        Map<String, Object> user = new HashMap<>();
+        user.put("name", input0);
+        user.put("ktp", input1);
+        user.put("dateOfBirth", input2);
+        user.put("profession", input3);
+        user.put("idKtp", input4);
+        user.put("address", input5);
+        user.put("idPowerOfAttorney", input6);
+        user.put("date", input7);
+        user.put("spinner", spinner.toString());
 
-    spinner.setOnItemSelectedListener(this);
+        String id = getDateTime("yyMMddHHmmssSSS");
 
-    String[] list = getResources().getStringArray(R.array.list);
-
-    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
-    spinner.setAdapter(arrayAdapter);
-
-    Map<String, Object> user = new HashMap<>();
-    user.put("name", input0);
-    user.put("ktp", input1);
-    user.put("dateOfBirth", input2);
-    user.put("profession", input3);
-    user.put("idKtp", input4);
-    user.put("address", input5);
-    user.put("idPowerOfAttorney", input6);
-    user.put("date", input7);
-    user.put("spinner", spinner.toString());
-
-    String id = getDateTime("yyMMddHHmmssSSS");
-
-    // Add a new document with a generated ID
-    db.collection("users")
-        .document(id)
-        .set(user)
-        .addOnSuccessListener(new OnSuccessListener<Void>() {
-          @Override
-          public void onSuccess(Void aVoid) {
-            Toast.makeText(getApplicationContext(), "Berhasil dikumpulkan", Toast.LENGTH_SHORT).show();
-          }
+        // Add a new document with a generated ID
+        firestore.collection("users")
+                .document("oi")
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getApplicationContext(), "Berhasil dikumpulkan", Toast.LENGTH_SHORT).show();
+                    }
 //          @Override
 //          public void onSuccess(DocumentReference documentReference) {
 //            Toast.makeText(getApplicationContext(), "Sukses", Toast.LENGTH_SHORT).show();
 //            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
 //          }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-          @Override
-          public void onFailure(@NonNull Exception e) {
-            Log.w(TAG, "Error adding document", e);
-            Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                        Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
 
-          }
-        });
-  }
+                    }
+                });
+    }
 
-  @Override
-  public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-    String item = parent.getItemAtPosition(position).toString();
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
 
-  }
+    }
 
-  @Override
-  public void onNothingSelected(AdapterView<?> parent) {
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
-  }
+    }
 
-  @SuppressLint("SimpleDateFormat")
-  public static String getDateTime(String pattern) {
-    return new SimpleDateFormat(pattern).format(new Date());
-  }
+    @SuppressLint("SimpleDateFormat")
+    public static String getDateTime(String pattern) {
+        return new SimpleDateFormat(pattern).format(new Date());
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        String input0 = name.getText().toString();
+        String input1 = ktp.getText().toString();
+        String input2 = dateOfBirth.getText().toString();
+        String input3 = profession.getText().toString();
+        String input4 = idKtp.getText().toString();
+        String input5 = address.getText().toString();
+        String input6 = idPowerOfAttorney.getText().toString();
+        String input7 = date.getText().toString();
+        String id = getDateTime("yyMMddHHmmssSSS");
+
+
+        if (!validateInputs(input0, input1, input2, input3, input4, input5, input6, input7)) {
+            DocumentReference reference = firestore.collection("users").document(id);
+            CollectionReference collectionReference = firestore.collection("OI");
+
+            Model model = new Model(
+                    input0,
+                    input1,
+                    input2,
+                    input3,
+                    input4,
+                    input5,
+                    input6,
+                    input7
+            );
+
+            reference.set(model)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getApplicationContext(), "Berhasil dikumpulkan", Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+        }
+
+    }
 }

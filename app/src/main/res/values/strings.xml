@@ -11,6 +11,14 @@
     <string name="tanggal">tanggal</string>
     <string name="dengan_ini_mengajukan_permohonan">dengan ini mengajukan permohonan</string>
     <string name="submit">submit</string>
+    <string name="error_name">Kolom nama harap diisi!!</string>
+    <string name="error_ktp">Kolom nama ktp harap diisi!!</string>
+    <string name="error_dateofbirth">Kolom tanggal lahir harap diisi!!</string>
+    <string name="error_profession">Kolom profesi harap diisi!!</string>
+    <string name="error_idktp">Kolom nomor KTP harap diisi!!</string>
+    <string name="error_address">Kolom alamat harap diisi!!</string>
+    <string name="error_idattorney">Kolom nomor surat kuasa harap diisi!!</string>
+    <string name="error_date">Kolom tanggal harap diisi!!</string>
     <string-array name="list">
         <item>Konversi / Pendaftaran Hak</item>
         <item>Pendaftaran Hak Milik Sarusun</item>

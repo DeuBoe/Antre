@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/amarkh/AndroidStudioProjects/Antre/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "outputFile": "/home/elly/AndroidStudioProjects/Antre/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/home/amarkh/.gradle/caches/transforms-2/files-2.1/8d5739a7a2c50d2abccb2a22bdbba895/material-1.2.0-alpha01/res/values-small-v4/values-small-v4.xml",
+                    "source": "/home/elly/.gradle/caches/transforms-2/files-2.1/037c7e9c1d11d038c0e156a65e90939a/material-1.2.0-alpha01/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
