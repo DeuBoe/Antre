@@ -1394,6 +1394,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1963,7 +1964,15 @@ string common_signin_button_text_long
 string data_pemohon
 string default_web_client_id
 string dengan_ini_mengajukan_permohonan
+string error_address
+string error_date
+string error_dateofbirth
 string error_icon_content_description
+string error_idattorney
+string error_idktp
+string error_ktp
+string error_name
+string error_profession
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior

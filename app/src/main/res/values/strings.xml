@@ -3,7 +3,7 @@
     <string name="data_pemohon">Data pemohon</string>
     <string name="nama_lengkap">Nama lengkap</string>
     <string name="nama_dalam_ktp">Dalam KTP tertulis</string>
-    <string name="umur_tanggal">Umur/tanggal lahir</string>
+    <string name="umur_tanggal">Tanggal lahir</string>
     <string name="perkerjaan">Perkerjaan</string>
     <string name="nomor_ktp">Nomor KTP</string>
     <string name="alamat">Alamat</string>

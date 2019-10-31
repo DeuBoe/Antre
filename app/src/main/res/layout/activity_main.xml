@@ -11,27 +11,40 @@
     android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/textDate"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="8dp"
-      android:layout_marginTop="24dp"
+      android:layout_gravity="end"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      android:text="@string/tanggal"
+      android:textColor="@android:color/black"
+      android:textSize="18sp" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
       android:text="@string/data_pemohon"
       android:textColor="@android:color/black"
       android:textSize="18sp" />
 
     <com.google.android.material.textfield.TextInputLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent" >
+      android:layout_height="match_parent">
 
       <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textName"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/nama_lengkap"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName|textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,10 +56,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/nama_dalam_ktp"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName|textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/umur_tanggal"
         android:inputType="date" />
@@ -73,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/perkerjaan"
         android:inputType="textCapSentences" />
@@ -88,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/nomor_ktp"
         android:inputType="number" />
@@ -103,10 +116,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/alamat"
-        android:inputType="textCapSentences" />
+        android:inputType="textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
@@ -130,30 +143,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textview.MaterialTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
-      android:text="@string/tanggal"
-      android:textColor="@android:color/black"
-      android:textSize="18sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-      <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:inputType="date" />
+        android:inputType="textCapCharacters" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
@@ -170,7 +160,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
+      android:layout_marginTop="16dp"
       android:layout_marginEnd="8dp"
       android:spinnerMode="dropdown" />
 
@@ -178,8 +168,12 @@
       android:id="@+id/button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="8dp"
-        android:background="@drawable/button_background"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="16dp"
+      android:background="@drawable/button_background"
+      android:textAlignment="center"
       android:text="@string/submit" />
 
   </LinearLayout>
