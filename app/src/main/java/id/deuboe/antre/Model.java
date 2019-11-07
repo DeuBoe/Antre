@@ -2,21 +2,35 @@ package id.deuboe.antre;
 
 public class Model {
 
-    private String name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney, date, choice;
+    private String name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney, today, spinner, id, date;
 
     public Model() {
 
     }
 
-    public Model(String name_model, String ktp_model, String dateOfBirth_model, String profession_model, String idKtp_model, String address_model, String idPowerOfAttorney_model, String date_model) {
-        this.name = name_model;
-        this.ktp = ktp_model;
-        this.dateOfBirth = dateOfBirth_model;
-        this.profession = profession_model;
-        this.idKtp = idKtp_model;
-        this.address = address_model;
-        this.idPowerOfAttorney = idPowerOfAttorney_model;
-        this.date = date_model;
+    public Model(
+        String name,
+        String ktp,
+        String dateOfBirth,
+        String profession,
+        String idKtp,
+        String address,
+        String idPowerOfAttorney,
+        String today,
+        String id,
+        String spinner,
+        String date) {
+        this.name = name;
+        this.ktp = ktp;
+        this.dateOfBirth = dateOfBirth;
+        this.profession = profession;
+        this.idKtp = idKtp;
+        this.address = address;
+        this.idPowerOfAttorney = idPowerOfAttorney;
+        this.today = today;
+        this.id = id;
+        this.spinner = spinner;
+        this.date = date;
     }
 
     public String getName() {
@@ -47,11 +61,20 @@ public class Model {
         return idPowerOfAttorney;
     }
 
+    public String getToday() {
+        return today;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getSpinner() {
+        return spinner;
+    }
+
     public String getDate() {
         return date;
     }
 
-    public String getChoice() {
-        return choice;
-    }
 }

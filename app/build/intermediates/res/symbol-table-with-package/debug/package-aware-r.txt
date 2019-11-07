@@ -1414,6 +1414,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable daftar_antrean
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1462,6 +1463,8 @@ drawable notify_panel_notification_icon_bg
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user
+drawable users
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1576,6 +1579,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id diwakilkan_text
 id dropdown_menu
 id edit_query
 id end
@@ -1617,8 +1621,12 @@ id line1
 id line3
 id listMode
 id list_item
+id mandiri
+id mandiri_text
 id masked
 id message
+id mewakilkan
+id mewakilkan_text
 id middle
 id mini
 id month_grid
@@ -1734,17 +1742,24 @@ id test_checkbox_app_button_tint
 id text
 id text2
 id textAddress
+id textAddress_diwakilkan
 id textDate
 id textDateOfBirth
+id textDateOfBirth_diwakilkan
 id textEnd
 id textIdKtp
+id textIdKtp_diwakilkan
 id textIdPowerOfAttorney
 id textKtp
+id textKtp_diwakilkan
 id textName
+id textName_diwakilkan
 id textProfession
+id textProfession_diwakilkan
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textToday
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1836,6 +1851,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_choose
+layout activity_diwakilkan
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1962,6 +1979,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string data_pemohon
+string data_yang_diwakilkan
 string default_web_client_id
 string dengan_ini_mengajukan_permohonan
 string error_address
@@ -2040,6 +2058,7 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
 style AppTheme
+style AppTheme2
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

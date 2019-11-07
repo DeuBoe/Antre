@@ -2,15 +2,14 @@ package id.deuboe.antre;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.app.DatePickerDialog.OnDateSetListener;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -22,10 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
@@ -35,19 +31,31 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,
-    View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnItemSelectedListener,
+    OnClickListener, OnItemClickListener {
 
   FirebaseFirestore firestore = FirebaseFirestore.getInstance();
   private static final String TAG = "MyActivity";
-  EditText name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney;
-  TextView date;
+  EditText name, ktp, dateOfBirth, profession, idKtp, address, idPowerOfAttorney, date;
+  Spinner spinner;
+  String spinnerText;
+  TextView today;
   DatePickerDialog.OnDateSetListener setListener;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    spinner = findViewById(R.id.spinner);
+    ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
+        this,
+        R.array.list,
+        android.R.layout.simple_spinner_item
+    );
+    arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+    spinner.setAdapter(arrayAdapter);
+    spinner.setOnItemSelectedListener(this);
 
     name = findViewById(R.id.textName);
     ktp = findViewById(R.id.textKtp);
@@ -56,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     idKtp = findViewById(R.id.textIdKtp);
     address = findViewById(R.id.textAddress);
     idPowerOfAttorney = findViewById(R.id.textIdPowerOfAttorney);
+    today = findViewById(R.id.textToday);
     date = findViewById(R.id.textDate);
 
     findViewById(R.id.button).setOnClickListener(this);
@@ -73,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
           @Override
           public void onDateSet(DatePicker view, int year, int month, int day) {
             month = month + 1;
-            String date = day + " /" + month + " / " + year;
+            String date = day + " / " + month + " / " + year;
             dateOfBirth.setText(date);
           }
         }, year, month, day);
@@ -81,8 +90,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
       }
     });
 
+    date.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+            MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+          @Override
+          public void onDateSet(DatePicker view, int year, int month, int day) {
+            month = month + 1;
+            String dateToday = day + " / " + month + " / " + year;
+            date.setText(dateToday);
+          }
+        }, year, month, day);
+        datePickerDialog.show();
+      }
+    });
+
     String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-    date.setText(currentDate);
+    today.setText(currentDate);
 
   }
 
@@ -132,8 +157,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     if (textDate.isEmpty()) {
-      date.setError(getString(R.string.error_date));
-      date.requestFocus();
+      today.setError(getString(R.string.error_date));
+      today.requestFocus();
       return true;
     }
     return false;
@@ -147,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String input4 = idKtp.getText().toString();
     String input5 = address.getText().toString();
     String input6 = idPowerOfAttorney.getText().toString();
-    String input7 = date.getText().toString();
+    String input7 = today.getText().toString();
 
     final Spinner spinner = findViewById(R.id.spinner);
 
@@ -167,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     user.put("idKtp", input4);
     user.put("address", input5);
     user.put("idPowerOfAttorney", input6);
-    user.put("date", input7);
+    user.put("today", input7);
     user.put("spinner", spinner.toString());
 
     String id = getDateTime("yyMMddHHmmssSSS");
@@ -195,8 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-    String item = parent.getItemAtPosition(position).toString();
-
+    spinnerText = (String) parent.getItemAtPosition(position);
   }
 
   @Override
@@ -219,12 +243,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String input4 = idKtp.getText().toString();
     String input5 = address.getText().toString();
     String input6 = idPowerOfAttorney.getText().toString();
-    String input7 = date.getText().toString();
+    String input7 = today.getText().toString();
     String id = getDateTime("yyMMddHHmmssSSS");
+    String input9 = spinnerText;
+    String input8 = date.getText().toString();
 
-
-
-    if (!validateInputs(input0, input1, input2, input3, input4, input5, input6, input7)) {
+    if (!validateInputs(input0, input1, input2, input3, input4, input5, input6, input8)) {
 
       DocumentReference reference = firestore.collection("users").document(id);
 
@@ -236,7 +260,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
           input4,
           input5,
           input6,
-          input7
+          input7,
+          id,
+          input9,
+          input8
       );
 
       reference.set(model)
@@ -255,5 +282,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
           });
     }
 
+  }
+
+  @Override
+  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
   }
 }
