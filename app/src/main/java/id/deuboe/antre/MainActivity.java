@@ -2,10 +2,12 @@ package id.deuboe.antre;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -164,60 +167,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     return false;
   }
 
-  private void createUser() {
-    String input0 = name.getText().toString();
-    String input1 = ktp.getText().toString();
-    String input2 = dateOfBirth.getText().toString();
-    String input3 = profession.getText().toString();
-    String input4 = idKtp.getText().toString();
-    String input5 = address.getText().toString();
-    String input6 = idPowerOfAttorney.getText().toString();
-    String input7 = today.getText().toString();
-
-    final Spinner spinner = findViewById(R.id.spinner);
-
-    spinner.setOnItemSelectedListener(this);
-
-    String[] list = getResources().getStringArray(R.array.list);
-
-    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-        android.R.layout.simple_spinner_item, list);
-    spinner.setAdapter(arrayAdapter);
-
-    Map<String, Object> user = new HashMap<>();
-    user.put("name", input0);
-    user.put("ktp", input1);
-    user.put("dateOfBirth", input2);
-    user.put("profession", input3);
-    user.put("idKtp", input4);
-    user.put("address", input5);
-    user.put("idPowerOfAttorney", input6);
-    user.put("today", input7);
-    user.put("spinner", spinner.toString());
-
-    String id = getDateTime("yyMMddHHmmssSSS");
-
-    // Add a new document with a generated ID
-    firestore.collection("users")
-        .document("oi")
-        .set(user)
-        .addOnSuccessListener(new OnSuccessListener<Void>() {
-          @Override
-          public void onSuccess(Void aVoid) {
-            Toast.makeText(getApplicationContext(), "Berhasil dikumpulkan", Toast.LENGTH_SHORT)
-                .show();
-          }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-          @Override
-          public void onFailure(@NonNull Exception e) {
-            Log.w(TAG, "Error adding document", e);
-            Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
-
-          }
-        });
-  }
-
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
     spinnerText = (String) parent.getItemAtPosition(position);
@@ -287,4 +236,5 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
   }
+
 }

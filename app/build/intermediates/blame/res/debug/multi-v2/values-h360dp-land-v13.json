@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/elly/AndroidStudioProjects/Antre/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "/home/zeinraa/dipo/Antre/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/elly/.gradle/caches/transforms-2/files-2.1/037c7e9c1d11d038c0e156a65e90939a/material-1.2.0-alpha01/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/home/zeinraa/.gradle/caches/transforms-2/files-2.1/6bb9c2f87828f8787bc3e59811fe1922/material-1.2.0-alpha01/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

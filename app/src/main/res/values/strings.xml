@@ -1,35 +1,39 @@
 <resources>
-  <string name="app_name">Daftar Antrean</string>
-  <string name="data_pemohon">Data pemohon</string>
-  <string name="nama_lengkap">Nama lengkap</string>
-  <string name="nama_dalam_ktp">Dalam KTP tertulis</string>
-  <string name="umur_tanggal">Tanggal lahir</string>
-  <string name="perkerjaan">Perkerjaan</string>
-  <string name="nomor_ktp">Nomor KTP</string>
-  <string name="alamat">Alamat</string>
-  <string name="berdasarkan_surat_kuasa_nomor">Berdasarkan surat kuasa nomor</string>
-  <string name="tanggal">tanggal</string>
-  <string name="dengan_ini_mengajukan_permohonan">dengan ini mengajukan permohonan</string>
-  <string name="submit">submit</string>
-  <string name="error_name">Kolom nama harap diisi!!</string>
-  <string name="error_ktp">Kolom nama ktp harap diisi!!</string>
-  <string name="error_dateofbirth">Kolom tanggal lahir harap diisi!!</string>
-  <string name="error_profession">Kolom profesi harap diisi!!</string>
-  <string name="error_idktp">Kolom nomor KTP harap diisi!!</string>
-  <string name="error_address">Kolom alamat harap diisi!!</string>
-  <string name="error_idattorney">Kolom nomor surat kuasa harap diisi!!</string>
-  <string name="error_date">Kolom tanggal harap diisi!!</string>
-  <string name="data_yang_diwakilkan">Data yang diwakilkan</string>
-  <string-array name="list">
-    <item>Konversi / Pendaftaran Hak</item>
-    <item>Pendaftaran Hak Milik Sarusun</item>
-    <item>Pendaftaran Tanah Wakaf</item>
-    <item>Pendaftaran Peralihan Hak</item>
-    <item>Pendaftaran Perubahan Hak</item>
-    <item>Pendaftaran Hak Tanggungan</item>
-    <item>Penghapusan Hak Tanggungan / Roya</item>
-    <item>Penerbitan Sertifikat Pengganti</item>
-    <item>Ganti Nama Sertifikat</item>
-    <item>Lainnya</item>
-  </string-array>
+    <string name="app_name">Daftar Antrean</string>
+    <string name="data_pemohon">Data pemohon</string>
+    <string name="nama_lengkap">Nama lengkap</string>
+    <string name="nama_dalam_ktp">Nama dalam KTP</string>
+    <string name="umur_tanggal">tt / BB / TTTT</string>
+    <string name="perkerjaan">Perkerjaan</string>
+    <string name="nomor_ktp">Nomor KTP</string>
+    <string name="alamat">Alamat</string>
+    <string name="berdasarkan_surat_kuasa_nomor">Berdasarkan surat kuasa nomor</string>
+    <string name="tanggal">tanggal</string>
+    <string name="dengan_ini_mengajukan_permohonan">dengan ini mengajukan permohonan</string>
+    <string name="kumpulkan">Kumpulkan</string>
+    <string name="error_name">Kolom nama harap diisi!!</string>
+    <string name="error_ktp">Kolom nama ktp harap diisi!!</string>
+    <string name="error_dateofbirth">Kolom tanggal lahir harap diisi!!</string>
+    <string name="error_profession">Kolom profesi harap diisi!!</string>
+    <string name="error_idktp">Kolom nomor KTP harap diisi!!</string>
+    <string name="error_address">Kolom alamat harap diisi!!</string>
+    <string name="error_idattorney">Kolom nomor surat kuasa harap diisi!!</string>
+    <string name="error_date">Kolom tanggal harap diisi!!</string>
+    <string name="data_yang_diwakilkan">Data yang diwakilkan</string>
+    <string name="tanggal_lahir">Tanggal lahir</string>
+    <string name="silakan_pilih">Silakan Pilih</string>
+    <string name="mewakilkan">Mewakilkan</string>
+    <string name="mandiri">Mandiri</string>
+    <string-array name="list">
+        <item>Konversi / Pendaftaran Hak</item>
+        <item>Pendaftaran Hak Milik Sarusun</item>
+        <item>Pendaftaran Tanah Wakaf</item>
+        <item>Pendaftaran Peralihan Hak</item>
+        <item>Pendaftaran Perubahan Hak</item>
+        <item>Pendaftaran Hak Tanggungan</item>
+        <item>Penghapusan Hak Tanggungan / Roya</item>
+        <item>Penerbitan Sertifikat Pengganti</item>
+        <item>Ganti Nama Sertifikat</item>
+        <item>Lainnya</item>
+    </string-array>
 </resources>
