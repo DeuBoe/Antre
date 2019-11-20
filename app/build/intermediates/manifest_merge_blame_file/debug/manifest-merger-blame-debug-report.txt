@@ -1,106 +1,46 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="id.deuboe.antre"
+3    package="id.pertanahanyg.deuboe.antreanonline"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="21"
-8-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml
+8        android:minSdkVersion="15"
+8-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml
+9-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:5:3-65
-11-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:5:20-62
-12
-13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-14    <!-- <uses-sdk android:minSdkVersion="14" /> -->
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:13:5-79
-15-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:13:22-76
-16
-17    <application
-17-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:7:3-23:17
-18        android:allowBackup="true"
-18-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:8:5-31
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.1.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/478b79604eaaf934858ce3739dce1708/core-1.1.0/AndroidManifest.xml:24:18-86
-20        android:debuggable="true"
-21        android:icon="@drawable/daftar_antrean"
-21-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:9:5-44
-22        android:label="@string/app_name"
-22-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:10:5-37
-23        android:roundIcon="@drawable/daftar_antrean"
-23-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:11:5-49
-24        android:supportsRtl="true"
-24-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:12:5-31
-25        android:testOnly="true"
-26        android:theme="@style/AppTheme" >
-26-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:13:5-36
-27        <activity android:name="id.deuboe.antre.DiwakilkanActivity" />
-27-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:14:5-61
-27-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:14:15-49
-28        <activity android:name="id.deuboe.antre.ChooseActivity" >
-28-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:15:5-21:16
-28-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:15:15-45
-29            <intent-filter>
-29-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:16:7-20:23
-30                <action android:name="android.intent.action.MAIN" />
-30-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:17:9-61
-30-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:17:17-58
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:19:9-69
-32-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:19:19-66
-33            </intent-filter>
-34        </activity>
-35        <activity android:name="id.deuboe.antre.MainActivity" />
-35-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:22:5-46
-35-->/home/zeinraa/dipo/Antre/app/src/main/AndroidManifest.xml:22:15-43
-36
-37        <service
-37-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:17:9-23:19
-38            android:name="com.google.firebase.components.ComponentDiscoveryService"
-38-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:18:13-84
-39            android:directBootAware="true"
-39-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:15:13-43
-40            android:exported="false" >
-40-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:19:13-37
-41            <meta-data
-41-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:20:13-22:85
-42                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-42-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:21:17-111
-43                android:value="com.google.firebase.components.ComponentRegistrar" />
-43-->[com.google.firebase:firebase-firestore:21.2.1] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/63347b5ce1308ad13ce4076c26308e03/firebase-firestore-21.2.1/AndroidManifest.xml:22:17-82
-44        </service>
-45
-46        <activity
-46-->[com.google.android.gms:play-services-base:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/8baebf4f86768458d9a1fd3f40e13728/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-47            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-47-->[com.google.android.gms:play-services-base:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/8baebf4f86768458d9a1fd3f40e13728/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-48            android:exported="false"
-48-->[com.google.android.gms:play-services-base:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/8baebf4f86768458d9a1fd3f40e13728/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-49            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-49-->[com.google.android.gms:play-services-base:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/8baebf4f86768458d9a1fd3f40e13728/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-50
-51        <provider
-51-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:19:9-23:39
-52            android:name="com.google.firebase.provider.FirebaseInitProvider"
-52-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:20:13-77
-53            android:authorities="id.deuboe.antre.firebaseinitprovider"
-53-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:21:13-72
-54            android:exported="false"
-54-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:22:13-37
-55            android:initOrder="100" />
-55-->[com.google.firebase:firebase-common:19.2.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/f2f464e7b3c96930b35ca6d6132a388c/firebase-common-19.2.0/AndroidManifest.xml:23:13-36
-56
-57        <meta-data
-57-->[com.google.android.gms:play-services-basement:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/65c42987141405aba4c2d60ec9875d9e/play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-58            android:name="com.google.android.gms.version"
-58-->[com.google.android.gms:play-services-basement:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/65c42987141405aba4c2d60ec9875d9e/play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-59            android:value="@integer/google_play_services_version" />
-59-->[com.google.android.gms:play-services-basement:17.0.0] /home/zeinraa/.gradle/caches/transforms-2/files-2.1/65c42987141405aba4c2d60ec9875d9e/play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-60    </application>
-61
-62</manifest>
+11    <application
+11-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:5:5-19:19
+12        android:allowBackup="true"
+12-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] C:\Users\juhyu\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:10:9-35
+19        android:theme="@style/AppTheme" >
+19-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:11:9-40
+20        <activity android:name="id.pertanahanyg.deuboe.antreanonline.MainActivity" >
+20-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:12:9-18:20
+20-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:12:19-47
+21            <intent-filter>
+21-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:13:13-17:29
+22                <action android:name="android.intent.action.MAIN" />
+22-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:14:17-69
+22-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:14:25-66
+23
+24                <category android:name="android.intent.category.LAUNCHER" />
+24-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:16:17-77
+24-->C:\Users\juhyu\AndroidStudioProjects\AlfaAntreanOnline\app\src\main\AndroidManifest.xml:16:27-74
+25            </intent-filter>
+26        </activity>
+27    </application>
+28
+29</manifest>
